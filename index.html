@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJS Practice</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="myCtrl">     
+        <p>{{ firstName + " " + lastName }}</p>
+        <p>{{number}}</p>
+        <button ng-click="testFun()">test</button>
+        <div ng-controller="child">
+          <p>{{$parent.firstName}}</p>
+          <p>{{firstName}}</p>                    
+        </div>
+    </div>
+    <gf></gf>
+    <div ng-controller="counter">
+      <p>counter controller count is : {{count}}</p>
+    </div>
+    <div ng-controller="shopping">
+        <shopping-list xxx="title" emit="trigger()"></shopping-list>
+        <mock-component ooo="title" fire="trigger()"></mock-component>
+    </div>
+  </body>
+  <script src="index.js"></script>
+  <script src="directive.js"></script>
+  <script src="shoppingList.js"></script>
+  <script src="shoppingItem.js"></script>
+</html>
